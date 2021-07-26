@@ -1,9 +1,37 @@
-{{title}}
+<!-- {{title}} -->
 <!-- <app-first [firstMessage]="appMessage"></app-first>
 <app-second></app-second>
 <app-third (thirdEvent)="appEvent($event)"> </app-third>
 <app-fourth></app-fourth> -->
 
-<app-first (firstEvent)="appEvent($event)"></app-first>
-<app-second [secondMessage]="appMessage"></app-second>
+<!-- <app-first (firstEvent)="appEvent($event)"></app-first>
+<app-second [secondMessage]="appMessage"></app-second> -->
+
+
+<!-- <div *ngFor="let device of devices">
+    <app-device-details [deviceDetail]="device"></app-device-details>
+</div> -->
+
+<!--
+<p>{{title}}</p>
+
+<p>Count: {{count}}</p>
+<button (click)="increment()">Add Count</button><br>
+<button (click)="decrement()">Sub Count</button><br>
+<app-second *ngIf = "count > 5"></app-second> -->
+
+<!-- <app-template-form (deviceDetails)="addDevice($event)"></app-template-form> -->
+<h1>Device Details View</h1>
+
+<div *ngIf="!showUpdate">
+  <div *ngFor="let device of devices">
+    <app-device-details [deviceDetail]="device" (updateDetail)="updateDevice($event)">
+    </app-device-details>
+  </div>
+</div>
+
+<div *ngIf="showUpdate">
+  <app-reactive-form [device]="deviceDetail" (update)="updateDisplay($event)"></app-reactive-form>
+
+</div>
 <router-outlet></router-outlet>

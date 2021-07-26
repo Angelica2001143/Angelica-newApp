@@ -1,0 +1,21 @@
+<h1>REACTIVE FORM</h1>
+
+<form [formGroup]="updateForm"(ngSubmit)="deviceUpdate()">
+  <input formControlName="id" type="hidden" id="id">
+  <label for="name">Device Name:</label>
+  <input formControlName="name" type="text" id="name">
+  <br>
+  <label for="brand">Brand:</label>
+  <input formControlName="brand" type="text" id="brand">
+  <br>
+  <label for="model">Model:</label>
+  <input formControlName="model" type="text" id="model">
+  <br>
+  <label for="year">Year:</label>
+  <input formControlName="year" type="text" id="year">
+  <br>
+  <label for="serial">Serial:</label>
+  <input formControlName="serial" type="text" id="serial">
+  <br>
+  <button type="submit">Submit</button>
+</form>
